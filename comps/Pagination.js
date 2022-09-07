@@ -6,9 +6,7 @@ import { RoundaboutLeftRounded } from "@mui/icons-material";
 import { useRouter } from "next/router";
 
 const Pagination = ({ page = 1 }) => {
-  {
-    /* <Link to={previous.fields.slug} rel="prev"></Link> */
-  }
+
   const router = useRouter();
   console.log;
   return (
@@ -17,7 +15,7 @@ const Pagination = ({ page = 1 }) => {
         <span>
           <button
             className="page-buttons"
-            onClick={() => router.push(`/?page=${page - 1}`)}
+            onClick={() => router.push(`/?page=${page-1}`)}
           >
             {" "}
             <span className="flex-center">
@@ -39,7 +37,7 @@ const Pagination = ({ page = 1 }) => {
         <span>
           <button
             className="page-buttons"
-            onClick={() => router.push(`/?page=${page + 1}`)}
+            onClick={() => router.push(`/?page=${page+1}`)}
           >
             <span className="flex-center">
               <span className="d-only">Nachste</span>
