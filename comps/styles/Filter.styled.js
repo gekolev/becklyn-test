@@ -30,9 +30,13 @@ h1{
         &:last-child{
             margin-right:0;
         }
-    }
-    option:not(:first-of-type) {
-  color: gray;
-}
+
+        @media (max-width: 650px) {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 10px;
+        margin-bottom:10px ;
+        }
+  }
 }
 `
