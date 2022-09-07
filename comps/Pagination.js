@@ -1,21 +1,24 @@
 import { StyledPagination } from "./styles/Pagination.styled";
-import Link from "next/link";
+// import Link from "next/link";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
-import { RoundaboutLeftRounded } from "@mui/icons-material";
+// import { RoundaboutLeftRounded } from "@mui/icons-material";
 import { useRouter } from "next/router";
 
-const Pagination = ({ page = 1 }) => {
+
+const Pagination = () => {
 
   const router = useRouter();
-  console.log;
+  const {page} = router.query;
+  const pageNumber = typeof page === "string" ? parseInt(page) : 0; 
+  // console.log;
   return (
     <StyledPagination>
       <div className="pagination-holder c-gray fz-14 w-heavy">
         <span>
           <button
             className="page-buttons"
-            onClick={() => router.push(`/?page=${page-1}`)}
+            onClick={() => router.push(`/?page=${pageNumber-1}`)}
           >
             {" "}
             <span className="flex-center">
@@ -37,7 +40,7 @@ const Pagination = ({ page = 1 }) => {
         <span>
           <button
             className="page-buttons"
-            onClick={() => router.push(`/?page=${page+1}`)}
+            onClick={() => router.push(`/?page=${pageNumber+1}`)}
           >
             <span className="flex-center">
               <span className="d-only">Nachste</span>

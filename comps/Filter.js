@@ -13,26 +13,17 @@ const Filter = ({ jobs }) => {
         <h1 className="fz-48 c-secondary w-bold">Hier beginnt deine Zukunft</h1>
         <div className="select-holder">
           <select className="Select Option" required>
-            <option value="" disabled defaultValue hidden>
-              Bereich
-            </option>
-            <option value="0">Value0</option>
+            <option value="0">Bereich</option>
             <option value="1">Value1</option>
             <option value="2">Value2</option>
           </select>
           <select className="Select Option" required>
-            <option value="" disabled defaultValue hidden>
-              Bereich
-            </option>
-            <option value="0">Value0</option>
+            <option value="0">Stadt</option>
             <option value="1">Value1</option>
             <option value="2">Value2</option>
           </select>
           <select className="Select Option" required>
-            <option value="" disabled defaultValue hidden>
-              Bereich
-            </option>
-            <option value="0">Value0</option>
+            <option value="0">Erfahrungslevel</option>
             <option value="1">Value1</option>
             <option value="2">Value2</option>
           </select>

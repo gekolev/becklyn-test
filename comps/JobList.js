@@ -1,27 +1,10 @@
 import { StyledJobList } from "./styles/JobList.styled";
-import Pagination from "../comps/Pagination";
-// import Image from 'next/image'
+// import Pagination from "../comps/Pagination";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import ArrowOutwardOutlinedIcon from "@mui/icons-material/ArrowOutwardOutlined";
 import Link from "next/link";
 
-// import { createClient } from 'contentful'
-// export async function getStaticProps(){
-//   const client = createClient({
-//     space: process.env.CONTENTFUL_SPACE_ID,
-//     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
-//     environment: process.env.CONTENTUL_ENVIRONMENT_ID
-//   })
-
-//   const res = await client.getEntries({content_type:'job'})
-
-//   return{
-//     props: {
-//       jobs: res.items
-//     }
-//   }
-// }
 
 export default function JobList({ job }) {
   return (

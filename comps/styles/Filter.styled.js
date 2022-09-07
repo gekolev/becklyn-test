@@ -7,6 +7,7 @@ justify-content: center;
 text-align: center;
 padding-bottom:60px;
 padding-top:100px;
+margin-bottom: 60px;
 h1{
     margin-top:18px
 }

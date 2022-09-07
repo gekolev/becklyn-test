@@ -9,7 +9,7 @@ import Pagination from "../comps/Pagination";
 //CONTENTFUL_ACCESS_KEY=ugwo2fZGO-fJeEdWkW-Ujj-1HrFeswaUc_usdsjCLrE
 
 import { createClient } from "contentful";
-export async function getStaticProps({ page = 1 }) {
+export async function getStaticProps() {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
@@ -24,13 +24,13 @@ export async function getStaticProps({ page = 1 }) {
   return {
     props: {
       jobs: res.items,
-      page: +page,
+      // page: +page,
     },
   };
 }
 
 export default function Home({ jobs }) {
-  console.log(jobs);
+  // console.log(jobs);
   return (
     <div>
       <Head>
@@ -41,7 +41,7 @@ export default function Home({ jobs }) {
       <GlobalStyles />
       <Filter />
       <div className="list">
-        {jobs.map((job) => (
+        {jobs.slice(0, 10).map((job) => (
           <JobList key={job.sys.id} job={job} />
         ))}
       </div>
