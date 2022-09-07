@@ -6,7 +6,10 @@ max-width:824px;
 width: 100%;
 margin: auto;
 margin-top: 48px;
-margin-bottom:60px ;
+margin-bottom:60px;
+@media (max-width: 425px) {
+    margin-bottom: 30px;
+  }
 .pagination-holder{
     display:flex;
     align-items: center ;
@@ -42,5 +45,19 @@ margin-bottom:60px ;
 .flex-center{
     display:flex;
     align-items: center;
+}
+button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    transition:0.3s;
+    &:hover{
+        color:#1AAEB7;
+        transition:0.3s;
+    }
 }
 `
