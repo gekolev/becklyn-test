@@ -26,7 +26,7 @@ h2{
     margin-bottom: 12px;
     transition:0.3s;
     &:first-child{
-        margin-top:60px;
+        /* margin-top:60px; */
     }
     &:hover{
         border:1px solid #1AAEB7;

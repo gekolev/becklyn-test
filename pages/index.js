@@ -2,23 +2,27 @@ import Head from 'next/head'
 import Filter from '../comps/Filter'
 import JobList from '../comps/JobList'
 import GlobalStyles from '../comps/styles/Global'
+import Pagination from '../comps/Pagination'
 
 //in .env.local
 //CONTENTFUL_SPACE_ID=h4fy7qjn6mui
 //CONTENTFUL_ACCESS_KEY=ugwo2fZGO-fJeEdWkW-Ujj-1HrFeswaUc_usdsjCLrE
 
 import { createClient } from 'contentful'
-export async function getStaticProps(){
+export async function getStaticProps({page=1}){
+  
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+    environment: process.env.CONTENTUL_ENVIRONMENT_ID
   })
 
-  const res = await client.getEntries({content_type:'job'})
+  const res = await client.getEntries({content_type:'job', limit: 8})
 
   return{
     props: {
-      jobs: res.items
+      jobs: res.items,
+      page: +page
     }
   }
 }
@@ -34,7 +38,12 @@ export default function Home({jobs}) {
       </Head>
       <GlobalStyles/>
       <Filter/>
-      <JobList/>
+      <div className='list'>
+        {jobs.map(job => (
+          <JobList key={job.sys.id} job={job}/>
+        ))}
+      </div>
+      <Pagination/>
     </div>
   )
 }
